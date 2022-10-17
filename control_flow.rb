@@ -7,7 +7,7 @@ def admin_login(username, password)
 end
 
 def hows_the_weather(temperature)
-  response = if temperature < 40
+  real_feel = if temperature < 40
                 "brisk"
               elsif temperature >= 40 && temperature <= 65
                 "a little chilly"
@@ -16,14 +16,32 @@ def hows_the_weather(temperature)
               else
                 "perfect"
               end
-  "It's #{response} out there!"
+  "It's #{real_feel} out there!"
 end
 
 def fizzbuzz(num)
-  # your code here
+  if num % 3 == 0 && num % 5 == 0
+    "FizzBuzz"
+  elsif num % 3 == 0
+    "Fizz"
+  elsif num % 5 == 0
+    "Buzz"
+  else
+    num
+  end
 end
 
 def calculator(operation, num1, num2)
-  # your code here
+  case operation
+  when "+"
+    num1 + num2
+  when "-"
+    num1 - num2
+  when "*"
+    num1 * num2
+  when "/"
+    num1 / num2
+  else
+    puts "Invalid operation!"
+  end
 end
-
